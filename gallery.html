@@ -6,22 +6,20 @@
         <script src="./js/aframe.js"></script>
 
     </head>
-    
+
     <body>
         <a-scene auto-enter-vr>
             <a-assets>
                 <img id="close1" src="assets/close-circled.png">
                 <img id="home1" src="assets/home.png">
-                
+
                 <!-- Images for gallery -->
                 <img id="first" src="assets/1.jpg">  <!--Adding 1st image to assets -->
                 <img id="second" src="assets/2.jpg"> <!--Adding 2nd image to assets -->
-                
-                <!--Task 2: Add Assets for remaining images start at line 19..
-                Make sure they have different id.
-                And src needs to be the path of the file in this case "assets/imagename.jpg"-->
-                
-                <!-- Hint: You can look at the assets already added for other images.-->
+                <img id="third" src="assets/stairwell.jpg">
+                <img id="fourth" src="assets/couch.jpg">
+                <img id="fifth" src="assets/hunt_oval.jpg">
+                <img id="sixth" src="assets/creativity_studio.jpg">
             </a-assets>
 
             <a-image id="closeimage" src="#close1" position="-1 -4.5 -10" scale="1.3 1.3 1.3"></a-image>
@@ -29,19 +27,22 @@
    <!--Task 3: Add the curved-image components for remaining 4 images here. -->
             <!--
             Remember Since you have connected there locations using <assets> you can use the id in the assets and src in the component need to be same
-            Example: If your asset is <img id="first" src="assets/1.jpg"> 
+            Example: If your asset is <img id="first" src="assets/1.jpg">
             Then your corresponding curved-image should be <a-curvedimage id="1" src="#first" transparent="true" height="3" radius="5" theta-length="40" rotation="0 280 0" position="0 0.8 0"> </a-curvedimage>
             See that id in assets is same as src in your curved-image component.
             -->
             <a-curvedimage id="one" src="#first" transparent="true" height="3" radius="5" theta-length="40" rotation="0 280 0" position="0 0.8 0"> </a-curvedimage>
             <a-curvedimage id="two" src="#second" transparent="true" height="3" radius="5" theta-length="40" rotation="0 230 0" position="0 0.8 0"> </a-curvedimage>
-            
-            
+            <a-curvedimage id="third" src="#third" transparent="true" height="3" radius="5" theta-length="40" rotation="0 180 0" position="0 0.8 0"> </a-curvedimage>
+            <a-curvedimage id="fourth" src="#fourth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 130 0" position="0 0.8 0"> </a-curvedimage>
+            <a-curvedimage id="fifth" src="#fifth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 80 0" position="0 0.8 0"> </a-curvedimage>
+            <a-curvedimage id="sixth" src="#sixth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 30 0" position="0 0.8 0"> </a-curvedimage>
+
 <!--        <a-curvedimage id="three" src="#third" transparent="true" height="3" radius="5" theta-length="40" rotation="0 180 0" position="0 0.8 0"> </a-curvedimage>
             <a-curvedimage id="four" src="#fourth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 130 0" position="0 0.8 0"> </a-curvedimage>
             <a-curvedimage id="five" src="#fifth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 80 0" position="0 0.8 0"> </a-curvedimage>
-            <a-curvedimage id="six" src="#sixth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 30 0" position="0 0.8 0"> </a-curvedimage> 
-            
+            <a-curvedimage id="six" src="#sixth" transparent="true" height="3" radius="5" theta-length="40" rotation="0 30 0" position="0 0.8 0"> </a-curvedimage>
+
             <!--Camera and Cursor -->
             <a-entity position="0 1 3">
                 <a-entity camera="fov:80" look-controls wasd-controls>
@@ -51,8 +52,8 @@
                         </a-entity>
                 </a-entity>
             </a-entity>
-        
-        
+
+
           <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
           <a-light type="ambient" color="#fff"></a-light>
           <!-- Sky color is the Background of your Webpage-->
@@ -80,37 +81,44 @@
                };
            })();
 
-            
+
             //TO DO 5:
             //Now We need to then connect these images to their 360 view. To Do so we use Javascript.
             //you can refer the code below, How we link the 1st and 2nd image to their 360 views.
-            
+
             //Linking the 1st image to its 360 view.
             document.querySelector("#one").addEventListener('click', function() {
                 window.location.href = "demos/1/index.html";
             });
-            
-            
+
             //Linking the 2nd image to its 360 view.
             document.querySelector("#two").addEventListener('click', function() {
                 window.location.href = "demos/2/index.html";
             });
-            
+
+            //Linking the 3rd image to its 360 view.
+            document.querySelector("#three").addEventListener('click', function() {
+                window.location.href = "demos/3/index.html";
+
+            //Linking the 4th image to its 360 view.
+            document.querySelector("#fourth").addEventListener('click', function() {
+                window.location.href = "demos/4/index.html";
+
+            //Linking the 5th image to its 360 view.
+            document.querySelector("#fifth").addEventListener('click', function() {
+                window.location.href = "demos/5/index.html";
+
+            //Linking the 6th image to its 360 view.
+            document.querySelector("#sixth").addEventListener('click', function() {
+                window.location.href = "demos/6/index.html";
+
             //Now to finish the TO DO 5 you need to add similar code for the 4 images that you just added.
             //REMEMBER: That the id used in the curved-image component should be similar to the querySelector in your javascript.
             //Example: If your curved image component is <a-curvedimage id="one" src="#first" transparent="true" height="3" radius="5" theta-length="40" rotation="0 280 0" position="0 0.8 0"> </a-curvedimage>
             //Then your javascript will be document.querySelector("#one").addEventListener('click', function() {window.location.href = "demos/1/index.html";});
 
-            //Linking the 3rd image to its 360 view.
-            
-            //Linking the 4th image to its 360 view.
-            
-            //Linking the 5th image to its 360 view.
-            
-            //Linking the 6th image to its 360 view.
-            
-            
-//              
+
+//
 //             document.querySelector("#three").addEventListener('click', function() {
 //                 window.location.href = "demos/3/index.html";
 //             });
@@ -130,12 +138,12 @@
             //Close button used for going back one level up
             document.querySelector("#closeimage").addEventListener('click', function() {
                 window.location.href = "index.html";
-            }); 
-            
+            });
+
             //Home Button used for going back to the instructions page (index.html)
             document.querySelector("#homepage").addEventListener('click', function() {
                 window.location.href = "index.html";
-            }); 
+            });
 
         </script>
     </body>
